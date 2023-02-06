@@ -1,9 +1,14 @@
+import articlesReduser from './articlesSlise';
+import publicationReduser from './publicationSlise'
+import commentsReduser from './commentsSlise'
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
-import counterReducer from '../features/counter/counterSlice';
+
 
 export const store = configureStore({
   reducer: {
-    counter: counterReducer,
+    articles: articlesReduser,
+    publication: publicationReduser,
+    comments: commentsReduser
   },
 });
 
