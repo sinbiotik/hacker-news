@@ -7,7 +7,7 @@ import { Loader } from "../components/Loader"
 import { ErrorMessage } from "../components/ErrorMessage"
 import { Publication } from "../components/Publication"
 import { useAppDispatch, useAppSelector } from "../hooks"
-import { fetchPublication } from "../store/publicationSlise"
+import { fetchPublication } from "../store/publicationSliсe"
 
 export function PublocationPage() {
   const {id} = useParams()

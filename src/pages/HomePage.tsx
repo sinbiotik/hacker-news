@@ -5,7 +5,7 @@ import RestartAltIcon from '@mui/icons-material/RestartAlt'
 import { Loader } from "../components/Loader";
 import { ErrorMessage } from "../components/ErrorMessage";
 import { useAppDispatch, useAppSelector } from "../hooks";
-import { fetchArticles } from "../store/articlesSlise";
+import { fetchArticles } from "../store/articlesSliсe";
 
 export function HomePage() {
   const dispatch = useAppDispatch()

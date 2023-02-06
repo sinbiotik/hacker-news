@@ -5,7 +5,7 @@ import { Comment } from './Comment'
 import { ErrorMessage } from './ErrorMessage'
 import { Loader } from './Loader'
 import { useAppDispatch, useAppSelector } from '../hooks'
-import { fetchComments } from '../store/commentsSlise'
+import { fetchComments } from '../store/commentsSliсe'
 
 
 interface CommensBlockProps {

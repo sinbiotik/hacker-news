@@ -2,7 +2,7 @@ import { Button, Card, CardActions, CardContent, Typography } from '@mui/materia
 import { useEffect } from "react"
 import { useAppDispatch } from '../hooks'
 import { IArticle } from '../models'
-import { fetchComments } from '../store/commentsSlise'
+import { fetchComments } from '../store/commentsSliсe'
 import { CommensBlock } from './CommensBlock'
 
 interface PublicationProps {

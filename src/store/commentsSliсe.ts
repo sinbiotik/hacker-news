@@ -40,7 +40,7 @@ export const fetchComments = createAsyncThunk<
   }
 )
 
-const commentSlise = createSlice({
+const commentSliсe = createSlice({
   name: 'comment',
   initialState: initialState,
   reducers: {},
@@ -63,7 +63,7 @@ const commentSlise = createSlice({
   },
 })
 
-export default commentSlise.reducer
+export default commentSliсe.reducer
 
 function isError(action: AnyAction) {
   return action.type.endsWith('rejected')

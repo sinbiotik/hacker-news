@@ -1,6 +1,6 @@
-import articlesReduser from './articlesSlise';
-import publicationReduser from './publicationSlise'
-import commentsReduser from './commentsSlise'
+import articlesReduser from './articlesSliсe';
+import publicationReduser from './publicationSliсe'
+import commentsReduser from './commentsSliсe'
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
 
 

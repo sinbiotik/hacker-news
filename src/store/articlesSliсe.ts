@@ -36,7 +36,7 @@ export const fetchArticles = createAsyncThunk<IArticle[], undefined, {rejectValu
   }
 )
 
-const articlesSlise = createSlice({
+const articlesSliсe = createSlice({
   name: 'articles',
   initialState: initialState,
   reducers: {},
@@ -57,7 +57,7 @@ const articlesSlise = createSlice({
       })
   },
 })
-export default articlesSlise.reducer
+export default articlesSliсe.reducer
 
 function isError(action: AnyAction) {
   return action.type.endsWith('rejected')
