@@ -2,7 +2,6 @@ import { Box, Breadcrumbs, Container, Fab, Link, Typography } from "@mui/materia
 import RestartAltIcon from '@mui/icons-material/RestartAlt'
 import { useParams } from "react-router-dom"
 import { useEffect } from "react"
-
 import { Loader } from "../components/Loader"
 import { ErrorMessage } from "../components/ErrorMessage"
 import { Publication } from "../components/Publication"
@@ -32,16 +31,20 @@ export function PublocationPage() {
         </Breadcrumbs>
       </div>
 
-      <Box>
-        {loading && <Loader />}
-        {error && <ErrorMessage error={error} />}
-        {publication && <Publication publication={publication}/>}       
+      <Box sx={{display: 'flex', flexDirection: 'column' }}>
+        <Box sx={{ display: 'flex', py: 1, justifyContent: 'center'}}>
+          {loading && <Loader />}
+          {error && <ErrorMessage error={error} />}
+        </Box>
+        {publication && <Publication publication={publication}/>}
+        {!loading &&
+          <Fab
+            sx={{ marginX: 'auto' }} color="primary" aria-label="add"
+            onClick={() => dispatch(fetchPublication(id))}>
+            <RestartAltIcon />
+          </Fab>
+        }
       </Box>
-
-      {!loading &&
-      <Fab color="primary" aria-label="add" onClick={() => dispatch(fetchPublication(id))}>
-        <RestartAltIcon />
-      </Fab>}
     </Container>    
   )  
 }

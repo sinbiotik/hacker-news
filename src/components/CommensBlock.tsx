@@ -1,11 +1,9 @@
 import { useEffect } from 'react'
-import Card from '@mui/material/Card/Card'
-
 import { Comment } from './Comment'
 import { ErrorMessage } from './ErrorMessage'
-import { Loader } from './Loader'
 import { useAppDispatch, useAppSelector } from '../hooks'
 import { fetchComments } from '../store/commentsSliсe'
+import { LinearProgress, Card } from '@mui/material'
 
 
 interface CommensBlockProps {
@@ -22,7 +20,7 @@ export function CommensBlock({kids}: CommensBlockProps) {
 
   return(
     <Card sx={{ ml:3, mr:1, mb:1 }}>
-      {loading && <Loader /> }
+      {loading && <LinearProgress /> }
       {error && <ErrorMessage error={error} />}
       
       {kids &&

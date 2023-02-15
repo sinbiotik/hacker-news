@@ -15,10 +15,10 @@ const initialState: PublicationState = {
 }
 
 export const fetchPublication = createAsyncThunk<
-    IArticle,
-    string | undefined,
-    {rejectValue: string}
-  >(
+  IArticle,
+  string | undefined,
+  {rejectValue: string}
+>(
   'publication/fetchPublication',
   async function(id, {rejectWithValue}) {
     try {

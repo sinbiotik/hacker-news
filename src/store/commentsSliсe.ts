@@ -52,9 +52,7 @@ const commentSliсe = createSlice({
     })
     .addCase(fetchComments.fulfilled, (state, action) =>{
       state.loading = false
-      const newComments = {...state.comments}
-      action.payload.forEach(comment => newComments[comment.id] = comment)
-      state.comments = newComments
+      action.payload.forEach(comment => state.comments[comment.id] = comment)
     })
     .addMatcher(isError, (state, action: PayloadAction<string>) => {
       state.error = action.payload

@@ -19,7 +19,6 @@ export function HomePage() {
       return      
     }
     dispatch(fetchArticles())
-
   }, [dispatch])
 
   return(
@@ -36,14 +35,18 @@ export function HomePage() {
       </div> 
 
       <Box component="div" sx={{display: 'flex', flexDirection: 'column' }}>
-        {loading && <Loader />}
-        {error && <ErrorMessage error={error} />}
+        <Box sx={{ display: 'flex', justifyContent: 'center', py: 1}}>
+          {loading && <Loader />}
+          {error && <ErrorMessage error={error} />}
+        </Box>
         {articles.map(article =>
            <ArticleCard article={article} key={article.id}/>
-          )}
-        
+          )}        
         {!loading &&
-        <Fab color="primary" aria-label="add" onClick={() => dispatch(fetchArticles())}>
+        <Fab
+          sx={{ marginX: 'auto' }} color="primary" aria-label="add" 
+          onClick={() => {dispatch(fetchArticles())}}
+        >
           <RestartAltIcon />
         </Fab>} 
       </Box>

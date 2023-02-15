@@ -14,7 +14,7 @@ export function ArticleCard({ article }: ArticleCardProps) {
     <Card
       className='article-card'      
       sx={{ mb:1, 
-        '&:hover': { transform: 'rotateY(10deg)',  },
+        '&:hover': { transform: 'rotateY(10deg)'},
       }}      
     >
       <CardContent sx={{ pt:0 }}>
@@ -22,7 +22,9 @@ export function ArticleCard({ article }: ArticleCardProps) {
           <Link to={`/about/${article.id}`}>            
             { article.title }
           </Link>     
-          <Button            
+          <Button
+            sx={{mx: 1, my: 1}}
+            size="small"          
             onClick={() => setDetails(prev => !prev)}            
           >
             { details? 'Hide Details' : 'Details' }         

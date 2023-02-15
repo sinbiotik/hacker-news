@@ -12,16 +12,10 @@ code {
     monospace;
 }
 
-h4 {
-  margin-top: 5px;
-  margin-bottom: 5px;
-}
-
 .breadcrumbs {
   margin: 5px 0 10px;
   padding: 10px;
-  background-color: #ff6600; 
-
+  background-color: #ff6600;
 }
 
 a {

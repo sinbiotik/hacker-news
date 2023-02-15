@@ -5,13 +5,11 @@ import { HomePage } from './pages/HomePage';
 import { PublocationPage } from './pages/PublocationPage';
 
 function App() {
-  return (
-    <>
-      <Routes>
-        <Route path='/' element={ <HomePage/> } />        
-        <Route path='/about/:id' element={ <PublocationPage /> } />
-      </Routes>      
-    </>
+  return (    
+    <Routes>
+      <Route path='/' element={ <HomePage/> } />        
+      <Route path='/about/:id' element={ <PublocationPage /> } />
+    </Routes>    
   );
 }
 
