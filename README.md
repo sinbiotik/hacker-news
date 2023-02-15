@@ -1,3 +1,16 @@
+Данное приложение является результатом выполнения тестового задания на позицию стажёра-фронтендера в компанию 'avito.tech'.
+
+Необходимо было разработать интерфейс для сайта Hacker News, состоящий из двух страниц.
+Был использован официальный API Hacker News: https://github.com/HackerNews/API
+
+Приложение разработано на TypeScript с использованием библиотек React и Redux Toolkit.
+Фреймворк UI: Material UI
+
+Ссылка на тестовое задание:
+
+https://github.com/avito-tech/internship_frontend_2022
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) TS template.
