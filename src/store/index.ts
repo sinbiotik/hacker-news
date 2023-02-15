@@ -1,14 +1,14 @@
-import articlesReduser from './articlesSliсe';
-import publicationReduser from './publicationSliсe'
-import commentsReduser from './commentsSliсe'
+import articlesReducer from './articlesSliсe';
+import publicationReducer from './publicationSliсe'
+import commentsReducer from './commentsSliсe'
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
 
 
 export const store = configureStore({
   reducer: {
-    articles: articlesReduser,
-    publication: publicationReduser,
-    comments: commentsReduser
+    articles: articlesReducer,
+    publication: publicationReducer,
+    comments: commentsReducer
   },
 });
 
