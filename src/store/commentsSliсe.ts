@@ -46,18 +46,19 @@ const commentSliсe = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
-    .addCase(fetchComments.pending, (state) => {
-      state.loading = true
-      state.error = null
-    })
-    .addCase(fetchComments.fulfilled, (state, action) =>{
-      state.loading = false
-      action.payload.forEach(comment => state.comments[comment.id] = comment)
-    })
-    .addMatcher(isError, (state, action: PayloadAction<string>) => {
-      state.error = action.payload
-      state.loading = false
-    })
+      .addCase(fetchComments.pending, (state) => {
+        // state.comments = {}
+        state.loading = true
+        state.error = null
+      })
+      .addCase(fetchComments.fulfilled, (state, action) =>{
+        state.loading = false
+        action.payload.forEach(comment => state.comments[comment.id] = comment)
+      })
+      .addMatcher(isError, (state, action: PayloadAction<string>) => {
+        state.error = action.payload
+        state.loading = false
+      })
   },
 })
 

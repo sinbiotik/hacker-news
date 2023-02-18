@@ -42,6 +42,7 @@ const publicationSliсe = createSlice({
   extraReducers:(builder) => {
     builder
       .addCase(fetchPublication.pending, (state) => {
+        state.publication = null
         state.loading = true
         state.error = null
       })

@@ -5,7 +5,6 @@ import { useAppDispatch, useAppSelector } from '../hooks'
 import { fetchComments } from '../store/commentsSliсe'
 import { LinearProgress, Card } from '@mui/material'
 
-
 interface CommensBlockProps {
   kids?: number[]
 }
@@ -14,7 +13,7 @@ export function CommensBlock({kids}: CommensBlockProps) {
   const {comments, loading, error} = useAppSelector(state => state.comments)
   const dispatch = useAppDispatch()
 
-  useEffect(() => {
+  useEffect(() => {    
     dispatch(fetchComments(kids))
   }, [kids])
 

@@ -41,7 +41,7 @@ export function Publication({ publication }: PublicationProps) {
         </a>        
       </CardActions>
 
-      <CommensBlock kids={publication.kids} /> 
+     <CommensBlock kids={publication.kids} /> 
     </Card>
   )
 }

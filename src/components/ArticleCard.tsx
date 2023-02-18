@@ -13,13 +13,13 @@ export function ArticleCard({ article }: ArticleCardProps) {
   return(
     <Card
       className='article-card'      
-      sx={{ mb:1, 
-        '&:hover': { transform: 'rotateY(10deg)'},
-      }}      
+      sx={{ mb:1,'&:hover': { transform: 'rotateY(10deg)'}}}      
     >
-      <CardContent sx={{ pt:0 }}>
+      <CardContent sx={{ pt:0, '&:last-child': { pb: 0 }}}>
         <Typography >          
-          <Link to={`/about/${article.id}`}>            
+          <Link
+            to={`/about/${article.id}`}            
+          >            
             { article.title }
           </Link>     
           <Button
