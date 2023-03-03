@@ -13,13 +13,14 @@ export function CommensBlock({kids}: CommensBlockProps) {
   const {comments, loading, error} = useAppSelector(state => state.comments)
   const dispatch = useAppDispatch()
 
-  useEffect(() => {    
+  useEffect(() => {        
     dispatch(fetchComments(kids))
   }, [kids])
 
   return(
     <Card sx={{ ml:3, mr:1, mb:1 }}>
-      {loading && <LinearProgress /> }
+      {loading && !kids?.some(kid => comments[kid]) && <LinearProgress /> }
+      
       {error && <ErrorMessage error={error} />}
       
       {kids &&
