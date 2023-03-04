@@ -1,11 +1,12 @@
 import { ArticleCard } from "../components/ArticleCard";
 import { useEffect } from "react";
-import { Box, Breadcrumbs, Container, Fab, Link } from "@mui/material"
+import { Box, Breadcrumbs, CardMedia, Container, Fab, Link } from "@mui/material"
 import RestartAltIcon from '@mui/icons-material/RestartAlt'
 import { Loader } from "../components/Loader";
 import { ErrorMessage } from "../components/ErrorMessage";
 import { useAppDispatch, useAppSelector } from "../hooks";
 import { fetchArticles } from "../store/articlesSliсe";
+// import "../img/hacker-news-logo.png";
 
 export function HomePage() {
   const dispatch = useAppDispatch()
@@ -26,8 +27,15 @@ export function HomePage() {
       <div className="breadcrumbs" role="presentation" >
         <Breadcrumbs
           aria-label="breadcrumb"
-          sx={{ maxWidth: 'lg', marginX: 'auto' }}
-        >        
+          sx={{ maxWidth: 'lg', marginX: 'auto'}}
+        > 
+          <CardMedia
+            component="img"            
+            sx={{ height: 30, width: 30, my: 1,
+              backgroundColor: 'white', border: 2,  borderColor: 'white'}}
+            image={'hacker-news-logo.png'}
+            alt={'logo'}
+          />        
           <Link underline="hover" color="black" href="/">
             Hacker News
           </Link>         

@@ -1,22 +1,36 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
+const CopyWebpackPlugin = require('copy-webpack-plugin')
+
 
 module.exports = {
-  entry: './src/index.tsx',
+  entry: {
+    main: './src/index.tsx',
+  },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js',
-    // clean: true,
+    filename: '[name].bundle.js',
+    // clean: true,               ???????
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: './public/index.html'
-    })
+    }),
+    new CopyWebpackPlugin({ 
+      patterns : [ 
+        {
+          from : path.resolve(__dirname, 'src/img/hacker-news-icon.ico'),
+          to: path.resolve(__dirname, 'dist')  
+        }, 
+        {
+          from : path.resolve(__dirname, 'src/img/hacker-news-logo.png'),
+          to: path.resolve(__dirname, 'dist') 
+        }, 
+      ], 
+    }),
   ],
   resolve: {
-    // Add `.ts` and `.tsx` as a resolvable extension.
     extensions: [".ts", ".tsx", ".js"],
-    // Add support for TypeScripts fully qualified ESM imports.
     extensionAlias: {
      ".js": [".js", ".ts"],
      ".cjs": [".cjs", ".cts"],
@@ -31,16 +45,20 @@ module.exports = {
 			},
 
       {
-       test: /\.([cm]?ts|tsx)$/,
-       exclude: /node_modules/,   // ??????
-       loader: "ts-loader",
-       options: {                 // ??????
-        compilerOptions: {
-          noEmit: false,
+        test: /\.([cm]?ts|tsx)$/,
+        exclude: /node_modules/,   // ??????
+        loader: "ts-loader",
+        options: {                 // ??????
+          compilerOptions: {
+            noEmit: false,
+          },
         },
       },
-      },
 
+      {
+				test: /\.(png|jpg|svg|gif)$/,
+        type: 'asset/resource'
+			},
     ],
   },
 };
@@ -60,3 +78,5 @@ module.exports = {
 // npm install --save-dev css-loader
 
 // npm install ts-loader --save-dev
+
+// npm i -D copy-webpack-plugin

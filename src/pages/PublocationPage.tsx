@@ -1,4 +1,4 @@
-import { Box, Breadcrumbs, Container, Fab, Link, Typography } from "@mui/material"
+import { Box, Breadcrumbs, CardMedia, Container, Fab, Link, Typography } from "@mui/material"
 import RestartAltIcon from '@mui/icons-material/RestartAlt'
 import { useParams } from "react-router-dom"
 import { useEffect } from "react"
@@ -23,7 +23,14 @@ export function PublocationPage() {
         <Breadcrumbs
          aria-label="breadcrumb"
          sx={{ maxWidth: 'lg', marginX: 'auto'}}
-        >        
+        > 
+          <CardMedia
+            component="img"            
+            sx={{ height: 30, width: 30, my: 1,
+              backgroundColor: 'white', border: 2,  borderColor: 'white'}}
+            image={'hacker-news-logo.png'}
+            alt={'logo'}
+          />         
           <Link underline="hover" color="black" href="/">
             Hacker News
           </Link>        
