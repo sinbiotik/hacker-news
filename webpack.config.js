@@ -4,30 +4,28 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 
 module.exports = {
+  // context: path.resolve(__dirname, 'src'),    ?????
+  mode: "development",
   entry: {
     main: './src/index.tsx',
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].bundle.js',
-    // clean: true,               ???????
+    filename: '[name].[hash].js',
+    clean: true,              
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: './public/index.html'
     }),
-    new CopyWebpackPlugin({ 
-      patterns : [ 
-        {
-          from : path.resolve(__dirname, 'src/img/hacker-news-icon.ico'),
-          to: path.resolve(__dirname, 'dist')  
-        }, 
-        {
-          from : path.resolve(__dirname, 'src/img/hacker-news-logo.png'),
-          to: path.resolve(__dirname, 'dist') 
-        }, 
-      ], 
-    }),
+    // new CopyWebpackPlugin({ 
+    //   patterns : [
+    //     {
+    //       from : path.resolve(__dirname, 'src/img/hacker-news-logo.png'),
+    //       to: path.resolve(__dirname, 'dist') 
+    //     }, 
+    //   ], 
+    // }),
   ],
   resolve: {
     extensions: [".ts", ".tsx", ".js"],
@@ -48,11 +46,6 @@ module.exports = {
         test: /\.([cm]?ts|tsx)$/,
         exclude: /node_modules/,   // ??????
         loader: "ts-loader",
-        options: {                 // ??????
-          compilerOptions: {
-            noEmit: false,
-          },
-        },
       },
 
       {
@@ -60,6 +53,9 @@ module.exports = {
         type: 'asset/resource'
 			},
     ],
+  },
+  devServer: {
+    port: 3000
   },
 };
 
@@ -70,7 +66,7 @@ module.exports = {
 // npm install --save-dev webpack
 // npm install --save-dev webpack-cli
 
-// npm install -D webpack-dev-server           // команды совпадают????
+// npm install -D webpack-dev-server           
 
 // npm install --save-dev html-webpack-plugin
 

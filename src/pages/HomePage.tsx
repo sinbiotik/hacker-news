@@ -6,7 +6,7 @@ import { Loader } from "../components/Loader";
 import { ErrorMessage } from "../components/ErrorMessage";
 import { useAppDispatch, useAppSelector } from "../hooks";
 import { fetchArticles } from "../store/articlesSliсe";
-// import "../img/hacker-news-logo.png";
+import logo from "../img/hacker-news-logo.png";
 
 export function HomePage() {
   const dispatch = useAppDispatch()
@@ -33,7 +33,7 @@ export function HomePage() {
             component="img"            
             sx={{ height: 30, width: 30, my: 1,
               backgroundColor: 'white', border: 2,  borderColor: 'white'}}
-            image={'hacker-news-logo.png'}
+            image={logo}
             alt={'logo'}
           />        
           <Link underline="hover" color="black" href="/">

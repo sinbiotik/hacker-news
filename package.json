@@ -27,6 +27,7 @@
   "scripts": {
     "dev": "npx webpack --mode development",
     "build": "npx webpack --mode production",
+    "start": "npx webpack-dev-server --mode production --open",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
