@@ -7,6 +7,7 @@ import { ErrorMessage } from "../components/ErrorMessage"
 import { Publication } from "../components/Publication"
 import { useAppDispatch, useAppSelector } from "../hooks"
 import { fetchPublication } from "../store/publicationSliсe"
+import logo from "../img/hacker-news-logo.png";
 
 export function PublocationPage() {
   const {id} = useParams()
@@ -19,24 +20,28 @@ export function PublocationPage() {
   
   return(
     <Container>
-      <div className="breadcrumbs" role="presentation" >
+      <Box role="presentation"
+        sx={{display: 'flex', alignItems: 'center', justifyContent: 'start',
+         padding: 1, backgroundColor: '#ff6600'
+        }}
+      >
+        <CardMedia
+          component="img"            
+          sx={{ height: 30, width: 30, mx: 1,
+            backgroundColor: 'white', border: 2,  borderColor: 'white'}}
+          image={logo}
+          alt={'logo'}
+        /> 
         <Breadcrumbs
          aria-label="breadcrumb"
-         sx={{ maxWidth: 'lg', marginX: 'auto'}}
-        > 
-          <CardMedia
-            component="img"            
-            sx={{ height: 30, width: 30, my: 1,
-              backgroundColor: 'white', border: 2,  borderColor: 'white'}}
-            image={'hacker-news-logo.png'}
-            alt={'logo'}
-          />         
+         sx={{ maxWidth: 'lg'}}
+        >         
           <Link underline="hover" color="black" href="/">
             Hacker News
           </Link>        
           <Typography color="text.primary">About</Typography>
         </Breadcrumbs>
-      </div>
+      </Box>
 
       <Box sx={{display: 'flex', flexDirection: 'column' }}>
         <Box sx={{ display: 'flex', py: 1, justifyContent: 'center'}}>
