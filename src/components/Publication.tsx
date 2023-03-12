@@ -36,7 +36,7 @@ export function Publication({ publication }: PublicationProps) {
       </CardContent>
 
       <CardActions>
-        <a href={publication.url} target="_blank">
+        <a href={publication.url} target="_blank" rel="noreferrer">
           <Button size="small">Learn More</Button>
         </a>        
       </CardActions>
