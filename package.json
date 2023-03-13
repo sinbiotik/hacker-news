@@ -1,5 +1,5 @@
 {
-  "name": "hacker_news_redux-toolkit",
+  "name": "hacker_news",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
