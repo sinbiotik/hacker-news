@@ -30,6 +30,7 @@ export function ArticleCard({ article }: ArticleCardProps) {
             { details? 'Hide Details' : 'Details' }         
           </Button>
         </Typography>
+        
         {details && 
           <>
             <Typography>
